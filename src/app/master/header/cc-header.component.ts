@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { MatIcon } from '@angular/material/icon';
 import { NgOptimizedImage } from '@angular/common';
 
 @Component({
@@ -9,14 +8,10 @@ import { NgOptimizedImage } from '@angular/common';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    MatIcon,
     NgOptimizedImage
   ]
 })
 export class CcHeaderComponent {
 
-  public onGitHubClick(): void {
-    window.open('https://github.com/Foblex/f-flow-example', '_blank');
-  }
 }
 
