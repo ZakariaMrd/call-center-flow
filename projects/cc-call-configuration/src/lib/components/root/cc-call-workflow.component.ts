@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { WorkflowListComponent } from '../workflow-list/workflow-list.component';
 import { RouterOutlet } from '@angular/router';
+import { WorkflowListVisibilityService } from '../../../../../../src/app/workflow-list-visibility.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'cc-call-workflow',
@@ -10,9 +12,14 @@ import { RouterOutlet } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     WorkflowListComponent,
-    RouterOutlet
+    RouterOutlet,
+    CommonModule
   ]
 })
 export class CcCallWorkflowComponent {
+
+  public visible$ = this.visibility.visible$;
+
+  constructor(private visibility: WorkflowListVisibilityService) {}
 
 }

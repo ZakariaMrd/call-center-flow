@@ -15,4 +15,10 @@ import { CcNavigationComponent } from './navigation/cc-navigation.component';
 })
 export class CcMasterComponent {
 
+  public isNavCollapsed = false;
+
+  public onToggleNav(): void {
+    this.isNavCollapsed = !this.isNavCollapsed;
+  }
+
 }
