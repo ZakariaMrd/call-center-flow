@@ -1,7 +1,14 @@
 @for (item of menu;track item) {
-  <a [routerLink]="item.key" routerLinkActive="active" [attr.disabled]="item.disabled">
-    <mat-icon>{{item.icon}}</mat-icon>
-  </a>
+  @if (item.key === 'flow') {
+    <a [routerLink]="item.key" routerLinkActive="active" #rla="routerLinkActive"
+       (click)="onFlowClick(rla.isActive)" [attr.disabled]="item.disabled">
+      <mat-icon>{{ item.icon }}</mat-icon>
+    </a>
+  } @else {
+    <a [routerLink]="item.key" routerLinkActive="active" [attr.disabled]="item.disabled">
+      <mat-icon>{{ item.icon }}</mat-icon>
+    </a>
+  }
 }
 <div class="flex-space"></div>
 <a routerLink="settings" routerLinkActive="active" [attr.disabled]="true">

@@ -1,5 +1,7 @@
 <header cc-header></header>
 <main>
-  <nav cc-navigation></nav>
+  <nav cc-navigation
+       [collapsed]="isNavCollapsed"
+       (toggle)="onToggleNav()"></nav>
   <router-outlet></router-outlet>
 </main>

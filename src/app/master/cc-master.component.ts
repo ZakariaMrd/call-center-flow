@@ -17,4 +17,9 @@ import { CcHeaderComponent } from './header/cc-header.component';
 })
 export class CcMasterComponent {
 
+  public isNavCollapsed = false;
+
+  public onToggleNav(): void {
+    this.isNavCollapsed = !this.isNavCollapsed;
+  }
 }

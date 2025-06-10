@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { IEntitySummary } from '@foblex/ng-clarc';
@@ -21,6 +21,13 @@ interface INavigationItem extends IEntitySummary<string> {
   ]
 })
 export class CcNavigationComponent {
+
+  @HostBinding('class.collapsed')
+  @Input()
+  public collapsed = false;
+
+  @Output()
+  public toggle: EventEmitter<void> = new EventEmitter<void>();
 
   public menu: INavigationItem[] = [
     {
@@ -45,5 +52,11 @@ export class CcNavigationComponent {
       disabled: true,
     }
   ];
+
+  public onFlowClick(isActive: boolean): void {
+    if (isActive) {
+      this.toggle.emit();
+    }
+  }
 
 }
