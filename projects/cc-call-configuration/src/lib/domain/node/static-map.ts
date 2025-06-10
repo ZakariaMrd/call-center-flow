@@ -33,6 +33,12 @@ export const NODE_STATIC_MAP: IMap<INodeStaticMapItem> = {
     color: '#ff859b',
     isExpandable: false,
   },
+  [ ENodeType.PlayAudio ]: {
+    name: 'Play audio',
+    icon: 'library_music',
+    color: '#00c0ff',
+    isExpandable: true,
+  },
 };
 interface IMap<T = string> {
   [ key: string ]: T;

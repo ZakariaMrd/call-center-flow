@@ -12,6 +12,8 @@ import { CreateConversationNodeHandler } from '../create-conversation-node/creat
 import { CreateConversationNodeRequest } from '../create-conversation-node/create-conversation-node-request';
 import { CreateDisconnectNodeHandler } from '../create-disconnect-node/create-disconnect-node-handler';
 import { CreateDisconnectNodeRequest } from '../create-disconnect-node/create-disconnect-node-request';
+import { CreatePlayAudioNodeHandler } from '../create-play-audio-node/create-play-audio-node-handler';
+import { CreatePlayAudioNodeRequest } from '../create-play-audio-node/create-play-audio-node-request';
 
 @Injectable({
   providedIn: 'root'
@@ -52,6 +54,9 @@ export class CreateNodeHandler implements IHandler<CreateNodeRequest, IFlowModel
         break;
       case ENodeType.ToOperator:
         result = this.injector.get(CreateConversationNodeHandler).handle(new CreateConversationNodeRequest(request.position));
+        break;
+      case ENodeType.PlayAudio:
+        result = this.injector.get(CreatePlayAudioNodeHandler).handle(new CreatePlayAudioNodeRequest(request.position));
         break;
       case ENodeType.Disconnect:
         result = this.injector.get(CreateDisconnectNodeHandler).handle(new CreateDisconnectNodeRequest(request.position));

@@ -8,5 +8,7 @@ export enum ENodeType {
 
   ToOperator = 'to-operator',
 
-  Disconnect = 'disconnect'
+  Disconnect = 'disconnect',
+
+  PlayAudio = 'play-audio',
 }
