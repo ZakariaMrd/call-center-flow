@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CcNavigationComponent } from './navigation/cc-navigation.component';
-import { CcHeaderComponent } from './header/cc-header.component';
 
 @Component({
   selector: 'cc-master',
@@ -12,7 +11,6 @@ import { CcHeaderComponent } from './header/cc-header.component';
   imports: [
     RouterOutlet,
     CcNavigationComponent,
-    CcHeaderComponent
   ]
 })
 export class CcMasterComponent {
